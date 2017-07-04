@@ -1,0 +1,102 @@
+body {
+  background-image: url("https://images.unsplash.com/photo-1486020921558-2ec858ae2815?dpr=1&auto=format&fit=crop&w=1080&h=720&q=80&cs=tinysrgb&crop=&bg=");
+  background-size: cover;
+    background-attachment: fixed;
+  text-align: center;
+  font-size: 28px;
+    font-family: 'Open Sans', sans-serif;
+    color:whitesmoke;
+}
+
+.container {
+    width: auto;
+    margin-right: 20%;
+    margin-left: 20%;
+}
+
+.today {
+    font-size: 40px;
+    padding: 20px;
+    margin: 10px;
+    text-shadow: 0 2px 2px rgba(0,0,0,0.6),
+				 0px 4px 12px rgba(0,0,0,0.1),
+			     0px 14px 22px rgba(0,0,0,0.1);
+}
+
+
+
+span {
+    font-size: 20px;
+}
+
+#temp {
+    font-size: 100px;
+}
+
+#current {
+    font-size: 0.7em;
+}
+
+#daily {
+    font-size: 0.6em;
+    margin-top: 20px;
+}
+
+#current, #daily, #city, #temp {
+text-shadow: 0 2px 2px rgba(0,0,0,0.6),
+            0px 4px 12px rgba(0,0,0,0.1),
+			 0px 14px 22px rgba(0,0,0,0.1);
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color:deeppink;
+    	text-shadow: 0 2px 2px rgba(0,0,0,0.6),
+				 0px 4px 12px rgba(0,0,0,0.1),
+			     0px 14px 22px rgba(0,0,0,0.1);
+}
+
+a:hover {
+    color: whitesmoke;
+}
+
+
+.celsius, .farenheit {
+    display:inline-block;
+    width: 50px;
+    background-color: rgba(55, 49, 67, 0.4);
+    text-shadow: 0 2px 2px rgba(0,0,0,0.6),
+				 0px 4px 12px rgba(0,0,0,0.1),
+			     0px 14px 22px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+i {
+    	text-shadow: 0 2px 2px rgba(0,0,0,0.6),
+				 0px 4px 12px rgba(0,0,0,0.1),
+			     0px 14px 22px rgba(0,0,0,0.1);
+}
+
+#icon {
+text-shadow: 0 2px 2px rgba(0,0,0,0.6),
+ 0px 4px 12px rgba(0,0,0,0.1),
+			  0px 14px 22px rgba(0,0,0,0.1);
+}
+
+footer {
+    margin-top: 14px;
+  font-size: 0.33em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 2px rgba(0,0,0,0.6),
+				 0px 4px 12px rgba(0,0,0,0.1),
+			     0px 14px 22px rgba(0,0,0,0.1);
+}
