@@ -1,11 +1,10 @@
 let forecastData;
 let geoLocData ;
-let unitsCel = '?units=si';
-let unitsFar = '?units=us';
+let units = '?units=si';
 
 const displayError = (error) => {
-    const errors = ['Unknown error', 'Permission denied by user', 'Position not available', 'Timeout error'];
-    const message = errors[error.code];
+    let errors = ['Unknown error', 'Permission denied by user', 'Position not available', 'Timeout error'];
+    let message = errors[error.code];
     console.warn('Error in getting your location: ' + message, error.message);
 }
 
@@ -16,11 +15,31 @@ const getLocation = () => {
             
     let lat = position.coords.latitude;
     let long = position.coords.longitude;
-    let cel = true;
             
     const baseURL = 'https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/'; //proxy + api url
-    const apiKey = API_KEY_GOES_HERE;
-    const weatherApiURL = baseURL + apiKey + '/' + lat + ',' + long + unitsCel; //full api url           
+    const apiKey = '75d1284c378bea21d8c0088feae64d82';
+    const weatherApiURL = baseURL + apiKey + '/' + lat + ',' + long + units; //full api url  
+            
+    //convert the temperature by making a new API call
+            
+    if (units == '?units=si') {
+        $('.celsius').css('color', '#1ba5b7');
+        $('.farenheit').css('color', 'whitesmoke');
+    } else {
+        $('.celsius').css('color', 'whitesmoke');
+        $('.farenheit').css('color', '#1ba5b7');
+    }
+        
+    $('.celsius').on('click', function () {
+    units = "?units=si";
+    getLocation();
+});
+
+    $('.farenheit').on('click', function () {
+    units = "?units=us";
+    getLocation();
+});
+     
             
 //using google API because dark sky API doesn't indicate cities
     const googleMapURL = 'https://maps.googleapis.com/maps/api/geocode/json?&latlng=' + lat + ',' + long;
@@ -31,36 +50,30 @@ const getLocation = () => {
         $.getJSON(googleMapURL, function(mapData) {
             geoLocData = mapData;
             console.log(mapData);
-//            console.log(mapData.results[2].formatted_address);
             forecastData = foreData;
             console.log(forecastData);
-//            console.log(forecastData.daily.summary); 
             render(forecastData, geoLocData);
             skycon(forecastData);
         })
-        
-
-}); // END OF JSON!!!!
-    
-    
-        }, displayError) //callback if something goes wrong with the geolocation
+    }); // END OF JSON!!!!
+  }, displayError) //callback if something goes wrong with the geolocation
 
 
         // time to display the JSON data to the DOM
 function render(forecastData, geoLocData) {
-    const city = geoLocData.results[1].formatted_address;
-    const temp = Math.round(forecastData.currently.temperature);
-    const currentSummary = forecastData.currently.summary;
-    const dailySummary= forecastData.daily.summary;
+    let city = geoLocData.results[1].address_components["0"].long_name;
+    let temp = Math.round(forecastData.currently.temperature);
+    let currentSummary = forecastData.currently.summary;
+    let dailySummary= forecastData.daily.summary;
 
     document.getElementById('city').innerHTML = city;
     document.getElementById('temp').innerHTML = temp + '°';
     document.getElementById('current').innerHTML = currentSummary;
-    document.getElementById('daily').innerHTML = '<i class="fa fa-quote-left" aria-hidden="true" style="font-size:15px"></i> ' + dailySummary + ' <i class="fa fa-quote-right" aria-hidden="true" style="font-size:15px"></i>';
+    document.getElementById('daily').innerHTML = dailySummary;
   }  
         // adding pretty skycons
 function skycon(data) {
-    let skycons = new Skycons({"color": "white"});
+    let skycons = new Skycons({"color": "whitesmoke"});
     skycons.set("icon", data.currently.icon);
     skycons.play();
         }       
