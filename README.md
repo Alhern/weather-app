@@ -1,3 +1,3 @@
-# weather-app
+# weather-app :umbrella:
 
-This mess of an app is in progress.
+This is still in progress.
