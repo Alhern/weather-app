@@ -17,7 +17,7 @@ const getLocation = () => {
     let long = position.coords.longitude;
             
     const baseURL = 'https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/'; //proxy + api url
-    const apiKey = process.env.API_KEY;
+    const apiKey = API_KEY_HERE;
     const weatherApiURL = baseURL + apiKey + '/' + lat + ',' + long + units; //full api url  
             
     //convert the temperature by making a new API call
