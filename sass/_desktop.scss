@@ -4,10 +4,24 @@
     margin-top: 20px;
 }
 
+#temp {
+    font-size: 4em;
+    margin: -16px;
+}
+
 .celsius, .farenheit {
     padding: 10px 10px;
 }
 
+#city {
+    font-size: 1.6em;
+}
+
 #current {
     font-size: 1em;
+}
+
+canvas {
+    width: 208px;
+    height: 208px;
 }

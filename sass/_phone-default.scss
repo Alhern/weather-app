@@ -32,12 +32,12 @@ span {
 }
 
 #temp {
-    font-size: 4em;
+    font-size: 3em;
     margin: -16px;
 }
 
 #current {
-    font-size: 1.3em;
+    font-size: 1.2em;
 }
 
 #daily {
@@ -51,7 +51,7 @@ span {
 }
 
 #city {
-    font-size: 1.6em;
+    font-size: 1.3em;
     padding-top: 10px;
 }
 
@@ -90,6 +90,11 @@ footer a:hover {
     left: 0;
     bottom: 0;
     position: fixed;
+}
+
+canvas {
+    width: 100px;
+    height: 100px;
 }
 
 

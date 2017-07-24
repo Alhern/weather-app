@@ -5,10 +5,23 @@
     padding: 12px;
 }
 
+#temp {
+    font-size: 4em;
+}
+
 .celsius, .farenheit {
     padding: 20px 20px;
 }
 
+#city {
+    font-size: 1.6em;
+}
+
 #current {
     font-size: 1em;
+}
+
+canvas {
+    width: 208px;
+    height: 208px;
 }
